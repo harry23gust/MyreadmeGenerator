@@ -4,10 +4,10 @@ const inquirer = require ('inquirer');
 const fs = require('fs') 
 const util = require('util');
 
-const generareMarkdown = require('./utils/generateMarkdown');
+const writeFileAsync = util.promisify(fs.writeFile);
 
 // TODO: Create an array of questions for user input
-const questions  () {
+function  questions  () {
 return inquirer.questions ([  
     {
     type: "input",
@@ -52,10 +52,14 @@ return inquirer.questions ([
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
+
+
+
+
 // TODO: Create a function to initialize app
  async function init() {
      try {
-         const response = await promptUser ();
+         const response = await questions ();
          const readMe = generareMarkdown(response);
           await writeToFileAsync("README.md", readMe)
           console.log("You did it!");
