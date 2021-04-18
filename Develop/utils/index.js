@@ -1,14 +1,14 @@
 // TODO: Include packages needed for this application
 
 const inquirer = require ('inquirer');
-const fs = require('fs'); 
+const fs = require('fs') 
 const generateMarkdown = require("./utils/generateMarkdown")
 
 
 // TODO: Create an array of questions for user input
-const  questions =  [
-  {
+const  questions =  [{
  
+    {
     type: "input",
     message: "what's your project title? (Required)",
     name:"title"
@@ -22,7 +22,7 @@ const  questions =  [
 }, {
 
     type: "input",
-    message: "Table of Conents.",
+    message: "Table oif Conents.",
     name: "Table of Contents"
   
 }, {
@@ -35,15 +35,9 @@ const  questions =  [
     name: "command"
 }, {
   type: "input",
-    message: "What is your githib user name?",
-    name: "UserName",
+    message: "What is your email address?",
+    name: "Email",
 }, {
-
-  type: "input",
-  message: "What is your Email address?",
-  name: "Email"
-},
-{
   type: "input",
     message: "What license was used for this README?",
     name: "License",
@@ -53,8 +47,8 @@ const  questions =  [
     name: "Contributor",
 }
 
-
-];
+  
+}];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -75,7 +69,7 @@ function writeToFile(fileName, data) {
 function init() {
   inquirer.prompt(questions)
   .then(function(data) {
-    writeToFile("distREADME.md", generateMarkdown(data));
+    writeToFile("distREADME.md", generatorMarkdown(data));
   })
 }
 
