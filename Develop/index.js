@@ -10,13 +10,13 @@ const  questions =  [
   {
  
     type: "input",
-    message: "what's your project title? (Required)",
+    message: "what's your project title?",
     name:"title"
     
 }, {
 
     type: "input",
-    message: "Please Provide detailed description and purpose of your application",
+    message: "Please Provide detailed description of your project",
     name: "description"
     
 }, {
@@ -27,7 +27,7 @@ const  questions =  [
   
 }, {
     type: "input",
-    message: "How does do use go about installing your app?",
+    message: "How does a  user go about installing your app?",
     name:"Installation "
 }, {
     type: "input",
@@ -35,7 +35,7 @@ const  questions =  [
     name: "command"
 }, {
   type: "input",
-    message: "What is your githib user name?",
+    message: "What is your github username?",
     name: "UserName",
 }, {
 
@@ -51,7 +51,12 @@ const  questions =  [
   type: "input",
     message: "Please add contributors",
     name: "Contributor",
+}, {
+  type: "input",
+  message:"What is the App used for?",
+  name:"Usage"
 }
+
 
 
 ];
