@@ -81,3 +81,49 @@ function init() {
 
 // Function call to initialize app
 init();
+
+
+
+
+const questions = () => {
+  return inquirer.questions([
+    {
+      type: 'input',
+      name: 'UserName',
+      message: 'What is your UserName? (Required)',
+      validate: UserNameInput => {
+        if (UserNameInput) {
+          return true;
+        } else {
+          console.log('Please enter your UserName!');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'Email',
+      message: 'Enter your Email (Required)',
+      validate: EmailInput => {
+        if (EmailInput) {
+          return true;
+        } else {
+          console.log('Please enter your Email!');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'title',
+      message: 'What is the title of your project?',
+      default: true
+    },
+    {
+      type: 'input',
+      name: 'description',
+      message: 'Provide some information about yourself:',
+      when: ({ confirmAbout }) => confirmAbout
+    }
+  ]);
+};
